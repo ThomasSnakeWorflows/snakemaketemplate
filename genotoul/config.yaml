@@ -1,0 +1,14 @@
+
+executor: slurm
+jobs: 100
+
+default-resources:
+  slurm_partition: "workq"
+  slurm_account: "faraut"
+  mem: 16GB
+  time: 96:00:00
+set-threads:
+    bwamap: 8
+set-resources:
+    bwamap:
+      mem: 64GB
