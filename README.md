@@ -12,3 +12,14 @@ Once created use simply
 ```
 mamba activate templatesnake
 ```
+
+
+### Running the pipeline
+#### locally
+```
+snakemake --configfile config.yaml  -p -j 1 -n
+```
+#### on the cluster
+```
+snakemake --configfile config.yaml --profile genotoul -p -j 1 -n
+```
