@@ -8,6 +8,7 @@ mamba activate templatesnake
 mamba install bioconda::bwa-mem2
 mamba install bioconda::samtools
 pip install snakemake-executor-plugin-slurm
+pip install termcolor
 ```
 Once created use simply
 ```
