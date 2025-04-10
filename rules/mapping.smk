@@ -1,16 +1,14 @@
 
-import re
-
 
 rule bwamap:
     input:
-        get_fastq,
-        get_genome
+        fastqs=get_fastq,
+        genome=get_genome
     output:
-        "mapping/{sample}/{sample}.txt"
+        "mapping/{sample}.bam"
     log:
         stderr="logs/bwmap/{sample}.log"
     shell:
         """
-        echo {input} > {output} 2> {log.stderr}
+        bwa-mem2 mem {input.genome} {input.fastqs} -o {output} 2> {log.stderr}
         """

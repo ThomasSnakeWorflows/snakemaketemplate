@@ -1,9 +1,20 @@
 
 import os
 import pathlib
+from termcolor import cprint
+
+WORKLOW_PATH = workflow.basedir
+
+# Helper functions #####
+def print_error_exit(message):
+    """ Print soft error message in mangenta and exit """
+    cprint("WARNING: " + message + ", exiting softly!", 'magenta',
+           attrs=['bold'], file=sys.stderr)
+    sys.exit(1)
 
 
-WORKLOW_PATH = os.getcwd()
+def bwa_mem2_index_exists(genome):
+    return os.path.isfile("%s.bwt.2bit.64" % genome)
 
 def get_genome(wildcards):
     return get_absolute_path(config['ref']['genome'])
@@ -17,5 +28,8 @@ def get_fastq(wildcards):
         fastqs_abspath.append(get_absolute_path(fastq))
     return fastqs_abspath
 
-def get_absolute_path(relative_path):
-    return "%s/%s" %(WORKLOW_PATH, relative_path)
+def get_absolute_path(path):
+    if os.path.isabs(path):
+        return path
+    else:
+        return "%s/%s" %(WORKLOW_PATH, path)
