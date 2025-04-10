@@ -6,6 +6,7 @@
 mamba create  -c conda-forge -c bioconda -n templatesnake snakemake=8.12.0
 mamba activate templatesnake
 mamba install bioconda::bwa-mem2
+mamba install bioconda::samtools
 pip install snakemake-executor-plugin-slurm
 ```
 Once created use simply
