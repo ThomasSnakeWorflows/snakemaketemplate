@@ -1,2 +1,2 @@
 sample	reads
-goatA	/work/user/faraut/snakemake/template/testdata/reads_R1.fastq.gz,/work/user/faraut/snakemake/template/testdata/reads_R2.fastq.gz
+goatA	testdata/reads_R1.fastq.gz,testdata/reads_R2.fastq.gz

@@ -5,7 +5,7 @@ import re
 rule bwamap:
     input:
         get_fastq,
-        config['ref']['genome']
+        get_genome
     output:
         "mapping/{sample}/{sample}.txt"
     log:

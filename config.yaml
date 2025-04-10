@@ -1,8 +1,8 @@
-samples: /work/user/faraut/snakemake/template/samples.tsv
+samples: samples.tsv
 
 ref:
   name: test
   # Path to the reference genome
-  genome: /work/user/faraut/snakemake/template/testdata/genome.fa.gz
+  genome: testdata/genome.fa.gz
 
-workdir: /work/user/faraut/snakemake/template/work
+workdir: work
