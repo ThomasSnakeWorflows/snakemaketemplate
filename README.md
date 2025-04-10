@@ -1,4 +1,4 @@
-# Template snakemake
+# Template for snakemake
 
 
 ### Create a conda env
