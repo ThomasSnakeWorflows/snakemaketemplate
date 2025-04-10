@@ -16,4 +16,4 @@ workdir: config['workdir']
 # Target rules
 rule all:
     input:
-        expand("mapping/{sample}/{sample}.bai", sample=samples.index)
+        expand("mapping/{sample}/{sample}.txt", sample=samples.index)
