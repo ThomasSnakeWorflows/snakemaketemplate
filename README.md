@@ -15,11 +15,16 @@ mamba activate templatesnake
 
 
 ### Running the pipeline
-#### locally
+
+First index the genome
+```bash
+bwa-mem2 index testdata/genome.fa.gz
+```
+#### Launching snakemake locally
 ```
 snakemake --configfile config.yaml  -p -j 1 -n
 ```
-#### on the cluster
+#### Launching snakemake  on the cluster
 ```
 snakemake --configfile config.yaml --profile genotoul -p -j 1 -n
 ```
